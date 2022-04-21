@@ -10,7 +10,7 @@ export class CdkReactAppStack extends Stack {
     const pipeline = new CodePipeline(this, 'Pipeline', {
       pipelineName: 'MyPipeline',
       synth: new ShellStep('Synth', {
-        input: CodePipelineSource.gitHub('OWNER/REPO', 'main'),
+        input: CodePipelineSource.gitHub('willsower/cdk-typescript-reactapp', 'main'),
         commands: ['npm ci', 'npm run build', 'npx cdk synth']
       })
     });
